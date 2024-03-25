@@ -54,7 +54,7 @@ $g = [
 	'acbbackuppath' => '/cf/conf/acb/',
 	'event_address' => 'unix:///var/run/check_reload_status',
 	'factory_shipped_username' => 'admin',
-	'factory_shipped_password' => 'pfsense',
+	'factory_shipped_password' => 'solidnet',
 	'upload_path' => '/root',
 	'dhcpd_chroot_path' => '/var/dhcpd',
 	'unbound_chroot_path' => '/var/unbound',
@@ -73,9 +73,9 @@ $g = [
 	'www_path' => '/usr/local/www',
 	'xml_rootobj' => 'pfsense',
 	'admin_group' => 'admins',
-	'product_name' => 'pfSense',
-	'product_label' => 'pfSense',
-	'product_label_html' => 'Netgate pfSense<sup>&#174;</sup>',
+	'product_name' => 'solidnet',
+	'product_label' => 'solidnet',
+	'product_label_html' => 'Netgate solidnet<sup>&#174;</sup>',
 	'product_version' => $product_version,
 	'product_copyright_years' => '2004 - ' . $present_year,
 	'disablehelpmenu' => false,
@@ -93,7 +93,7 @@ $g = [
 	'services_dhcp_server_enable' => true,
 	'wireless_regex' => '/^(ath|athp|bwi|bwn|ipw|iwi|iwlwifi|iwm|iwn|malo|mwl|ral|rsu|rtwn|rum|run|uath|upgt|ural|urtw|urtwn|wi|wpi|wtap|zyd)[0-9]+/',
 	'help_base_url' => '/help.php',
-	'pkg_prefix' => 'pfSense-pkg-',
+	'pkg_prefix' => 'solidnet-pkg-',
 	'default_timezone' => 'Etc/UTC',
 	'language' => 'en_US',
 	'default_config_backup_count' => 30,
@@ -197,7 +197,7 @@ if (($machine_type == 'arm') || ($machine_type == 'arm64')) {
 /* Read all XML files in following dir and load menu entries */
 $g['ext_menu_path'] = '/usr/local/share/'. g_get('product_name') . '/menu';
 
-/* Cache file used to store pfSense version */
+/* Cache file used to store solidnet version */
 $g['version_cache_file'] = g_get('varrun_path') . '/' . g_get('product_name') . '_version';
 $g['version_cache_refresh'] = 7200; /* 2h */
 
@@ -569,7 +569,7 @@ function get_ipprotocols(?string $type = ''):array {
 	return array_diff($ipprotocols, $exclude);
 }
 
-// source pfSense Plus specific globals last
+// source solidnet Plus specific globals last
 if (can_include('globals.plus.inc')) {
 	include_once('globals.plus.inc');
 }
